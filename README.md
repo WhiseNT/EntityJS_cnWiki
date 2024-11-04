@@ -1,0 +1,2 @@
+# EntityJS_cnWiki
+EntityJS原WIKI的中文翻译版本
