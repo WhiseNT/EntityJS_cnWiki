@@ -9,19 +9,19 @@
 <table>
   <tr>
     <td><strong>addGoalSelectors</strong></td>
-    <td>Define criteria for entity behavior prioritization.</td>
+    <td>定义实体行为的优先级.</td>
   </tr>
   <tr>
     <td><strong>addGoals</strong></td>
-    <td>Add specific behaviors for entities to perform.</td>
+    <td>添加实体要执行的行为</td>
   </tr>
   <tr>
     <td><strong>buildBrain</strong></td>
-    <td>Construct entity decision-making logic.</td>
+    <td>构建实体的决策逻辑.</td>
   </tr>
   <tr>
     <td><strong>buildBrainProvider</strong></td>
-    <td>Define entity perception and interaction capabilities.</td>
+    <td>定义实体的感知能力和交互能力.</td>
   </tr>
 </table>
 
@@ -29,7 +29,7 @@
 
 ## Add Goal Selectors 🎯
 
-> This script allows you to add or remove goals from the "wyrm" entity and define custom goals.
+> 这个脚本使你移除了 "wyrm" 原先的Goal并定义 了自定义的Goal.
 
 #### 📜 Server Script:
 
@@ -75,7 +75,7 @@ EntityJSEvents.addGoalSelectors('kubejs:wyrm', e => {
 
 ## Add Goals 🛠️
 
-> This script adds new goals and target behaviors to the "wyrm" entity.
+> 此脚本向"wyrm"实体添加了新的Goal和对目标的行为.
 
 #### 📜 Server Script:
 
@@ -101,7 +101,7 @@ EntityJSEvents.addGoals("kubejs:wyrm", event => {
 
 ## Build Brain 🧠
 
-> This script constructs the decision-making logic for the "wyrm" entity, defining its behaviors.
+> 此脚本为"wyrm"实体构建了逻辑策略逻辑,定义其行为.
 
 #### 📜 Server Script:
 
@@ -130,7 +130,7 @@ EntityJSEvents.buildBrain('kubejs:wyrm', event => {
 
 ## Build Brain Provider 🧩
 
-> This script defines the perception and memory logic for the "wyrm" entity by adding memory and sensor modules.
+> 此脚本通过添加记忆和传感器来定义"wyrm"实体的感知和记忆逻辑.
 
 #### 📜 Server Script:
 

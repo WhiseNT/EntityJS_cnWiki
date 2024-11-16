@@ -1,7 +1,7 @@
 ### EntityJS
 
-> **EntityJS** is a powerful addon for KubeJS that enhances your Minecraft experience by providing:
-> With EntityJS, you can bring your custom entities to life with ease and precision.
+> **EntityJS** 是一个能提高你提供Minecraft流程的有力KubeJS扩展:
+> 使用EntityJS, 你可以轻松地自定义实体.
 
 ---
 
@@ -11,8 +11,8 @@
 
 <table>
   <tr>
-    <td>Dynamic Entity Registration</td>
-    <td>Easily register custom entities and define their attributes using JavaScript.</td>
+    <td>动态实体注册</td>
+    <td>使用JavaScript轻松地创建实体和自定义属性.</td>
   </tr>
   <tr>
     <td>Behavior Definition</td>

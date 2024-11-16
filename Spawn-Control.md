@@ -9,15 +9,15 @@
 <table>
   <tr>
     <td><strong>🌍 Spawn Conditions</strong></td>
-    <td>Define conditions for spawning, such as biome type, light level, time of day, and proximity to specific blocks.</td>
+    <td>定义生成条件,例如生物群系、光照等级、一天中的时间以及与特定区块的距离</td>
   </tr>
   <tr>
     <td><strong>🔄 Spawn Rates</strong></td>
-    <td>Set the frequency of entity spawns based on specific conditions to control entity density.</td>
+    <td>根据具体情况设置实体生成的频率以控制实体密度.</td>
   </tr>
   <tr>
     <td><strong>📍 Spawn Locations</strong></td>
-    <td>Specify where entities can spawn, including biomes, dimensions, or custom-defined areas.</td>
+    <td>指定实体可以生成的位置,包括生物群系、维度或者自定义的区域.</td>
   </tr>
 </table>
 
@@ -25,7 +25,7 @@
 
 ## Example of `biomeSpawns` 🗺️
 
-> The `biomeSpawns` event allows you to add or remove entity spawns in specific biomes. This event is useful for simple modifications without predicate conditions. Changes require a full world restart.
+> The `biomeSpawns` 事件允许你在特定生物群系中添加或者删除实体生成.此事件对于没有谓词条件的简单修改很有用,更改需要重载世界生效.
 
 ```javascript
 //biomeSpawns Server Script
@@ -42,22 +42,22 @@ EntityJSEvents.biomeSpawns(event => {
 
 ## Example of `spawnPlacement` 🎯
 
-> The `spawnPlacement` feature is used to customize spawning more precisely. You can add custom conditions, apply predicates, or replace spawn rules for specific entity types. The following script demonstrates logical conditions (`and`, `or`, `replace`) for entity spawns.
+> The `spawnPlacement`用于更精确地自定义生成. 你可以添加自定义条件,谓词, 或者替换特定实体类型的生成规则.以下脚本演示了实体生成的(`and`, `or`, `replace`)逻辑条件.
 
 ```javascript
 //spawnPlacement Startup Script
 EntityJSEvents.spawnPlacement(event => {
-    // Add an "and" predicate: Only allow drowned to spawn above y level 44
+    // 添加"and"谓词: 只允许溺尸在y轴44格以上生成.
     event.and('minecraft:drowned', (entitypredicate, levelaccessor, spawntype, blockpos, randomsource) => {
         return blockpos.y > 44;
     });
 
-    // Add an "or" predicate: Allow enderman to spawn outside the End dimension
+    // 添加 "or" 谓词: 允许末影人在末地以外的维度生成
     event.or('minecraft:enderman', (entitypredicate, levelaccessor, spawntype, blockpos, randomsource) => {
         return levelaccessor.level.dimension != 'minecraft:the_end';
     });
 
-    // Replace spawn rules: Allow blaze spawns in the Overworld
+    // 替换生成规则:允许烈焰人在主世界生成
     event.replace('minecraft:blaze', 'no_restrictions', 'world_surface', (entitypredicate, levelaccessor, spawntype, blockpos, randomsource) => {
         return levelaccessor.level.dimension == 'minecraft:overworld';
     });

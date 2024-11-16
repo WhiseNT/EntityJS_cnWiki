@@ -29,20 +29,20 @@
 //attributes Startup Script
 EntityJSEvents.attributes(event => {
     /**
-     * While the entity builders come with pre-added default attributes you may
-     * add your own attributes here as well for more control over your entity's attributes.
-     * This also works to modify existing mob's attributes such as in this example we are modifying
-     * an allay's max health.
+     * 虽然实体构建器预置了默认属性,但你可以
+     * 在此处添加你自定义属性,用以更好地控制实体的属性
+     * 这也同样适用于修改现有怪物(mob)的属性,例如本例我们正在修改的属性:
+     * 悦灵的最大生命值
      */
     event.modify('minecraft:allay', attribute => {
         //Overwrite an allay's max health attribute setting it to 30.
         attribute.add("minecraft:generic.max_health", 30)
     })
-    //You are able to see existing attributes an entity may already have like so
+    //你可以通过下述代码输出实体可能已经具有的属性
     event.getAttributes('allay').forEach(attribute => {
         console.log(`Allay Attribute: ${attribute.descriptionId}: ${attribute.defaultValue}`)
     })
-    // Returns a list of all entity types that can have their attributes modified by this event
+    // 下句可以以列表形式输出所有能够通过此事件修改属性的实体类型,
     console.log(event.getAllTypes())
 })
 ```

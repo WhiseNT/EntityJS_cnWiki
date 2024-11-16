@@ -1,7 +1,6 @@
 # **Adding a Simple Animation Controller** 🎥
 
-> To incorporate animations into entities, you'll need an animation controller. This section explains how to add a basic controller to manage animations for the "wyrm" entity.
-
+> 要将动画绑定在实体上,需要一个动画控制器.本节将介绍如何添加一个基本的控制器用于管理"wyrm"实体的动画
 ```javascript
 StartupEvents.registry('entity_type', event => {
     event.create('wyrm', 'entityjs:animal')
@@ -16,15 +15,15 @@ StartupEvents.registry('entity_type', event => {
 });
 ```
 
-> - The `addAnimationController` method adds a new controller named "exampleController" to the "wyrm" entity.  
-> - The controller transitions between animations with a `translationTicksLength` of 1.  
-> - The "spawn" animation is played when the entity is hurt, while the "idle" animation loops indefinitely.
+> - 方法 `addAnimationController` 将名为`exampleController`的新控制器添加到了"wyrm"
+> - 这个控制器的`translationTicksLength`为1 .  
+> - 当实体受到伤害时，会播放"spawn"动画，而"idle"动画则无限循环。
 
 ---
 
 # **Setting Up Triggerable Animations** 🎯
 
-> Triggerable animations play based on specific events or conditions. Here’s how you can set up triggerable animations for the "wyrm" entity.
+> Triggerable animaitons会在特定条件或者事件下播放,以下是如何为实体"wyrm"设置Triggerable animations
 
 ```javascript
 StartupEvents.registry('entity_type', event => {
@@ -42,15 +41,15 @@ StartupEvents.registry('entity_type', event => {
 });
 ```
 
-> - A triggerable animation named "spawn" is added with a loop type of "default".  
-> - The "idle" animation plays when the entity is moving.  
-> - The "spawning" animation is triggered when the entity jumps.
+> - 添加了一个名为 "spawn" 的可触发动画,其循环类型为 "default".  
+> -  "idle" 会在实体移动的时候播放  
+> - "spawning"动画将会在实体跳跃时触发
 
 ---
 
 # **Dedicated Triggerable Animation Setup** 🔧
 
-> A dedicated method to add triggerable animations using `addTriggerableAnimationController`. This setup manages animations without additional logic.
+> 使用一个名为`addTriggerableAnimationController`的专用方法来添加可触发动画,这不需要额外的逻辑即可管理动画.
 
 ```javascript
 StartupEvents.registry('entity_type', event => {
@@ -59,14 +58,14 @@ StartupEvents.registry('entity_type', event => {
 });
 ```
 
-> - This adds an animation controller named "exampleController" with a transition duration of 5.  
-> - A triggerable animation named "spawn" is added with a loop type of "play_once".
+> - 这将添加一个名为“exampleController”的动画控制器，其转换持续时间为5. 
+> - 添加了一个名为"spawn"的可触发动画,其循环类型为"play_once".
 
 ---
 
 # **Entity `triggerAnimation` Method** 🚀
 
-> The `triggerAnimation` method can be called directly from the entity object in built-in KubeJS events such as `EntityEvents.hurt`.
+> The `triggerAnimation`可以直接在KubeJS事件中的被实体调用,例如`EntityEvents.hurt`.
 
 ```javascript
 EntityEvents.hurt('kubejs:wyrm', event => {
@@ -74,13 +73,13 @@ EntityEvents.hurt('kubejs:wyrm', event => {
 });
 ```
 
-> - When the entity is hurt, the "spawning" animation is triggered using the `triggerAnimation` method.
+> -  使用了`triggerAnimation`方法,这让实体受伤时触发"spawning"动画.
 
 ---
 
 # **File Structure for Geckolib Entities** 📁
 
-> Ensure the following file structure for Geckolib entity animations, geo models, and textures:
+> 确保Geckolib实体动画、模型和贴图的文件结构如下:
 
 <table>
   <tr>
